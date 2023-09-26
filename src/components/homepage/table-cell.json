@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_homepage_table_cells",
+  "info": {
+    "displayName": "Table Cell",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_homepage_focused_cards",
+  "info": {
+    "displayName": "Focused Cards",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

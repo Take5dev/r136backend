@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_homepage_focuseds",
+  "info": {
+    "displayName": "Focused",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "default": "We Are Focused Investors"
+    },
+    "textLeft": {
+      "type": "text",
+      "default": "R136 is primarily focused on established companies that are ready to scale and move through mid-to-late funding stages."
+    },
+    "textRight": {
+      "type": "text",
+      "default": "Your specific funding stage is less important than the state of your organization and your interest in scaling rapidly to gain new market opportunities."
+    },
+    "cardsTitle": {
+      "type": "string",
+      "required": true,
+      "default": "A company is established if:"
+    },
+    "focusedCards": {
+      "displayName": "Focused Cards",
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.focused-cards",
+      "required": true,
+      "min": 3,
+      "max": 3
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Submit your project"
+    }
+  }
+}

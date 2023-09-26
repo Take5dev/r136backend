@@ -1,0 +1,78 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "displayName": "SEO",
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": false
+    },
+    "header": {
+      "displayName": "Header",
+      "type": "component",
+      "repeatable": false,
+      "component": "global.header",
+      "required": true
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.hero",
+      "required": true
+    },
+    "vision": {
+      "displayName": "Vision",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.vision",
+      "required": true
+    },
+    "mission": {
+      "displayName": "Mission",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.mission",
+      "required": true
+    },
+    "focused": {
+      "displayName": "Focused",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.focused",
+      "required": true
+    },
+    "tableRow": {
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.table",
+      "required": true,
+      "max": 4,
+      "min": 4
+    },
+    "contact": {
+      "displayName": "Contact",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.contact",
+      "required": true
+    },
+    "form": {
+      "displayName": "Form",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.form",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "collectionName": "components_homepage_forms",
+  "info": {
+    "displayName": "Form",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "requiredError": {
+      "type": "string",
+      "required": true,
+      "default": "The field is required"
+    },
+    "emailIncorrectError": {
+      "type": "string",
+      "required": true,
+      "default": "Please write a correct e-mail"
+    },
+    "namePlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "Name *"
+    },
+    "titlePlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "Title"
+    },
+    "companyPlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "Company *"
+    },
+    "countryPlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "Country where headquartered"
+    },
+    "emailPlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "Email *"
+    },
+    "textareaPlaceholder": {
+      "type": "string",
+      "default": "How can we help?",
+      "required": true
+    },
+    "privacyPolicyLabel": {
+      "type": "string",
+      "required": true,
+      "default": "I consent to share my personal data and accept Privacy Policy"
+    },
+    "communicationLabel": {
+      "type": "string",
+      "required": true,
+      "default": "I agree to receive communication from R136"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Submit"
+    },
+    "errorMessage": {
+      "type": "string",
+      "required": true,
+      "default": "Sorry, an error occurred - please, try again"
+    },
+    "successMessage": {
+      "type": "string",
+      "required": true,
+      "default": "Thank you, the message was sent successfully"
+    }
+  }
+}

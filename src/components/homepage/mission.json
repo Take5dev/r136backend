@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_homepage_missions",
+  "info": {
+    "displayName": "Mission",
+    "icon": "handHeart"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "default": "Mission"
+    },
+    "textLeft": {
+      "type": "text",
+      "default": "R136 invests in mid- and late-stage startups that have created promising concepts and provides the resources, guidance and expertise that helps them rapidly scale."
+    },
+    "textRight": {
+      "type": "text",
+      "default": "We bring to bear our unique experience building and operating large organizations in b2b tech and fintech. We provide global expertise but are a local firm in the regions we serve."
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Get In Touch"
+    }
+  }
+}
