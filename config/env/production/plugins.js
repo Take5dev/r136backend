@@ -20,18 +20,19 @@ module.exports = ({ env }) => ({
     },
   },
   upload: {
-    config: {
-      provider: "strapi-provider-upload-supabase-strage",
-      providerOptions: {
-        url: env("SUPABASE_API_URL"),
-        apiKey: env("SUPABASE_API_KEY"),
-        bucket: env("SUPABASE_BUCKET"),
-        bucketPrefix: "",
-      },
-      actionOptions: {
-        upload: {},
-        uploadStream: {},
-        delete: {},
+    upload: {
+      config: {
+        provider: "cloudinary",
+        providerOptions: {
+          cloud_name: env("CLOUDINARY_NAME"),
+          api_key: env("CLOUDINARY_KEY"),
+          api_secret: env("CLOUDINARY_SECRET"),
+        },
+        actionOptions: {
+          upload: {},
+          uploadStream: {},
+          delete: {},
+        },
       },
     },
   },
