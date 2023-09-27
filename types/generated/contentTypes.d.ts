@@ -361,6 +361,82 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomepageHomepage extends Schema.SingleType {
+  collectionName: 'homepages';
+  info: {
+    singularName: 'homepage';
+    pluralName: 'homepages';
+    displayName: 'Homepage';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    header: Attribute.Component<'global.header'> & Attribute.Required;
+    hero: Attribute.Component<'homepage.hero'> & Attribute.Required;
+    vision: Attribute.Component<'homepage.vision'> & Attribute.Required;
+    mission: Attribute.Component<'homepage.mission'> & Attribute.Required;
+    focused: Attribute.Component<'homepage.focused'> & Attribute.Required;
+    tableRow: Attribute.Component<'homepage.table', true> &
+      Attribute.Required &
+      Attribute.SetMinMax<{
+        min: 4;
+        max: 4;
+      }>;
+    contact: Attribute.Component<'homepage.contact'> & Attribute.Required;
+    form: Attribute.Component<'homepage.form'> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::homepage.homepage',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRequestRequest extends Schema.CollectionType {
+  collectionName: 'requests';
+  info: {
+    singularName: 'request';
+    pluralName: 'requests';
+    displayName: 'Request';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Title: Attribute.String;
+    Company: Attribute.String;
+    Country: Attribute.String;
+    Email: Attribute.String;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::request.request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::request.request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -676,82 +752,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomepageHomepage extends Schema.SingleType {
-  collectionName: 'homepages';
-  info: {
-    singularName: 'homepage';
-    pluralName: 'homepages';
-    displayName: 'Homepage';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    seo: Attribute.Component<'seo.seo'>;
-    header: Attribute.Component<'global.header'> & Attribute.Required;
-    hero: Attribute.Component<'homepage.hero'> & Attribute.Required;
-    vision: Attribute.Component<'homepage.vision'> & Attribute.Required;
-    mission: Attribute.Component<'homepage.mission'> & Attribute.Required;
-    focused: Attribute.Component<'homepage.focused'> & Attribute.Required;
-    tableRow: Attribute.Component<'homepage.table', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 4;
-        max: 4;
-      }>;
-    contact: Attribute.Component<'homepage.contact'> & Attribute.Required;
-    form: Attribute.Component<'homepage.form'> & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::homepage.homepage',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRequestRequest extends Schema.CollectionType {
-  collectionName: 'requests';
-  info: {
-    singularName: 'request';
-    pluralName: 'requests';
-    displayName: 'Request';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Title: Attribute.String;
-    Company: Attribute.String;
-    Country: Attribute.String;
-    Email: Attribute.String;
-    message: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::request.request',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::request.request',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Shared {
     export interface ContentTypes {
@@ -762,14 +762,14 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::request.request': ApiRequestRequest;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::homepage.homepage': ApiHomepageHomepage;
-      'api::request.request': ApiRequestRequest;
     }
   }
 }
