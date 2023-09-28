@@ -190,11 +190,12 @@ export interface HomepageOffice extends Schema.Component {
   info: {
     displayName: 'Office';
     icon: 'pinMap';
+    description: '';
   };
   attributes: {
     location: Attribute.String & Attribute.Required;
     description: Attribute.RichText;
-    globeLeftPosiiton: Attribute.Float &
+    globeLeftPosition: Attribute.Float &
       Attribute.Required &
       Attribute.SetMinMax<{
         min: 0;
@@ -206,6 +207,7 @@ export interface HomepageOffice extends Schema.Component {
         min: 0;
         max: 100;
       }>;
+    pointLabelOnTop: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 

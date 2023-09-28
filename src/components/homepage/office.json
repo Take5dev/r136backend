@@ -2,7 +2,8 @@
   "collectionName": "components_homepage_offices",
   "info": {
     "displayName": "Office",
-    "icon": "pinMap"
+    "icon": "pinMap",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,7 @@
     "description": {
       "type": "richtext"
     },
-    "globeLeftPosiiton": {
+    "globeLeftPosition": {
       "type": "float",
       "min": 0,
       "max": 100,
@@ -24,6 +25,10 @@
       "required": true,
       "max": 100,
       "min": 0
+    },
+    "pointLabelOnTop": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
