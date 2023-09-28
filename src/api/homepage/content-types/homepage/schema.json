@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "Homepage"
+    "displayName": "Homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -72,6 +73,13 @@
       "type": "component",
       "repeatable": false,
       "component": "homepage.form",
+      "required": true
+    },
+    "overlay": {
+      "displayName": "Overlay",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.overlay",
       "required": true
     }
   }

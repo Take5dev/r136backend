@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_homepage_overlays",
+  "info": {
+    "displayName": "Overlay",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "richtext",
+      "default": "<span>Mobile version</span> <span>is under development</span>",
+      "required": true
+    },
+    "lead": {
+      "type": "string",
+      "default": "Please switch to the desktop version for a better experience"
+    }
+  }
+}

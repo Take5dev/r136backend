@@ -2,7 +2,8 @@
   "collectionName": "components_global_headers",
   "info": {
     "displayName": "Header",
-    "icon": "filter"
+    "icon": "filter",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,6 +11,31 @@
       "type": "string",
       "required": true,
       "default": "Submit"
+    },
+    "visionMenuLabel": {
+      "type": "string",
+      "default": "Our Vision",
+      "required": true
+    },
+    "missionMenuLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Our Mission"
+    },
+    "focusedMenuLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Where we invest"
+    },
+    "contactMenuLabel": {
+      "type": "string",
+      "default": "Contact Us",
+      "required": true
+    },
+    "collapsedMenuLabel": {
+      "type": "string",
+      "default": "Menu",
+      "required": true
     }
   }
 }

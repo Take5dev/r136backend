@@ -5,11 +5,27 @@ export interface GlobalHeader extends Schema.Component {
   info: {
     displayName: 'Header';
     icon: 'filter';
+    description: '';
   };
   attributes: {
     buttonLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Submit'>;
+    visionMenuLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our Vision'>;
+    missionMenuLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our Mission'>;
+    focusedMenuLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Where we invest'>;
+    contactMenuLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Contact Us'>;
+    collapsedMenuLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Menu'>;
   };
 }
 
@@ -193,6 +209,21 @@ export interface HomepageOffice extends Schema.Component {
   };
 }
 
+export interface HomepageOverlay extends Schema.Component {
+  collectionName: 'components_homepage_overlays';
+  info: {
+    displayName: 'Overlay';
+    icon: 'monitor';
+  };
+  attributes: {
+    heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.DefaultTo<'<span>Mobile version</span> <span>is under development</span>'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'Please switch to the desktop version for a better experience'>;
+  };
+}
+
 export interface HomepageTableCell extends Schema.Component {
   collectionName: 'components_homepage_table_cells';
   info: {
@@ -275,6 +306,7 @@ declare module '@strapi/strapi' {
       'homepage.hero': HomepageHero;
       'homepage.mission': HomepageMission;
       'homepage.office': HomepageOffice;
+      'homepage.overlay': HomepageOverlay;
       'homepage.table-cell': HomepageTableCell;
       'homepage.table': HomepageTable;
       'homepage.vision': HomepageVision;
