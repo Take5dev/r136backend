@@ -13,7 +13,7 @@
       "default": "We Back the Brightest and Help Them Scale"
     },
     "lead": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

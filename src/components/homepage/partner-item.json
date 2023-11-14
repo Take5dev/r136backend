@@ -2,7 +2,8 @@
   "collectionName": "components_homepage_partner_items",
   "info": {
     "displayName": "Partner Item",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,7 +11,7 @@
       "type": "string"
     },
     "text": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

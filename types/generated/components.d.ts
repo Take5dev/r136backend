@@ -292,10 +292,11 @@ export interface HomepagePartnerItem extends Schema.Component {
   info: {
     displayName: 'Partner Item';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    text: Attribute.Blocks;
+    text: Attribute.RichText;
   };
 }
 
@@ -375,15 +376,16 @@ export interface HomepageTestimonials extends Schema.Component {
   info: {
     displayName: 'Testimonials';
     icon: 'message';
+    description: '';
   };
   attributes: {
     heading: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Testimonials'>;
-    lead: Attribute.Blocks;
     buttonLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'View more'>;
+    lead: Attribute.RichText;
   };
 }
 
@@ -398,7 +400,7 @@ export interface HomepageVision extends Schema.Component {
     heading: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'We Back the Brightest and Help Them Scale'>;
-    lead: Attribute.Blocks;
+    lead: Attribute.RichText;
   };
 }
 

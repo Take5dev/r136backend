@@ -2,7 +2,8 @@
   "collectionName": "components_homepage_testimonials",
   "info": {
     "displayName": "Testimonials",
-    "icon": "message"
+    "icon": "message",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,13 +12,13 @@
       "default": "Testimonials",
       "required": true
     },
-    "lead": {
-      "type": "blocks"
-    },
     "buttonLabel": {
       "type": "string",
       "default": "View more",
       "required": true
+    },
+    "lead": {
+      "type": "richtext"
     }
   }
 }
