@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_homepage_page404s",
+  "info": {
+    "displayName": "page404",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "404",
+      "required": true
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Page not found"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "default": "Go to Homepage",
+      "required": true
+    }
+  }
+}

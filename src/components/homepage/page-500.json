@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_homepage_page_500s",
+  "info": {
+    "displayName": "Page 500",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "500",
+      "required": true
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Internal Server Error"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "default": "Go to Homepage",
+      "required": true
+    }
+  }
+}

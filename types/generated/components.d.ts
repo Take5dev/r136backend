@@ -287,6 +287,36 @@ export interface HomepageOverlay extends Schema.Component {
   };
 }
 
+export interface HomepagePage500 extends Schema.Component {
+  collectionName: 'components_homepage_page_500s';
+  info: {
+    displayName: 'Page 500';
+    icon: 'earth';
+  };
+  attributes: {
+    heading: Attribute.String & Attribute.Required & Attribute.DefaultTo<'500'>;
+    subheading: Attribute.String & Attribute.DefaultTo<'Internal Server Error'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Homepage'>;
+  };
+}
+
+export interface HomepagePage404 extends Schema.Component {
+  collectionName: 'components_homepage_page404s';
+  info: {
+    displayName: 'page404';
+    icon: 'earth';
+  };
+  attributes: {
+    heading: Attribute.String & Attribute.Required & Attribute.DefaultTo<'404'>;
+    subheading: Attribute.String & Attribute.DefaultTo<'Page not found'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Homepage'>;
+  };
+}
+
 export interface HomepagePartnerItem extends Schema.Component {
   collectionName: 'components_homepage_partner_items';
   info: {
@@ -503,6 +533,8 @@ declare module '@strapi/types' {
       'homepage.mission': HomepageMission;
       'homepage.office': HomepageOffice;
       'homepage.overlay': HomepageOverlay;
+      'homepage.page-500': HomepagePage500;
+      'homepage.page404': HomepagePage404;
       'homepage.partner-item': HomepagePartnerItem;
       'homepage.portfolio': HomepagePortfolio;
       'homepage.privacy-policy': HomepagePrivacyPolicy;
