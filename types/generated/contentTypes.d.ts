@@ -785,7 +785,7 @@ export interface ApiTeamTeam extends Schema.CollectionType {
     position: Attribute.Component<'team.position', true>;
     bio: Attribute.RichText;
     links: Attribute.Component<'team.links', true>;
-    portfolio: Attribute.Component<'team.selected-portfolio', true>;
+    portfolio: Attribute.Component<'team.selected-portfolio'>;
     sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

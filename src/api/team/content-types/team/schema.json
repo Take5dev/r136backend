@@ -58,7 +58,7 @@
     "portfolio": {
       "displayName": "Selected Portfolio",
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "team.selected-portfolio"
     },
     "sort": {
