@@ -734,6 +734,178 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
   };
 }
 
+export interface ApiIndustryIndustry extends Schema.CollectionType {
+  collectionName: 'industries';
+  info: {
+    singularName: 'industry';
+    pluralName: 'industries';
+    displayName: 'Industry';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::industry.industry', 'name'>;
+    portfolio: Attribute.Relation<
+      'api::industry.industry',
+      'manyToOne',
+      'api::portfolio.portfolio'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLocationLocation extends Schema.CollectionType {
+  collectionName: 'locations';
+  info: {
+    singularName: 'location';
+    pluralName: 'locations';
+    displayName: 'Location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::location.location', 'name'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioPortfolio extends Schema.CollectionType {
+  collectionName: 'portfolios';
+  info: {
+    singularName: 'portfolio';
+    pluralName: 'portfolios';
+    displayName: 'Portfolio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    link: Attribute.Component<'portfolio.portfolio-link'>;
+    industries: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'oneToMany',
+      'api::industry.industry'
+    >;
+    location: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'oneToOne',
+      'api::location.location'
+    >;
+    type: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'oneToOne',
+      'api::type.type'
+    >;
+    showOnHomepage: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortfolioPagePortfolioPage extends Schema.SingleType {
+  collectionName: 'portfolio_pages';
+  info: {
+    singularName: 'portfolio-page';
+    pluralName: 'portfolio-pages';
+    displayName: 'Portfolio Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    h1: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our Investment Portfolio'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'We work with entrepreneurs to provide the capital, in-depth technical knowledge, access to talent and mature investment processes to scale their successful startups.'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Homepage'>;
+    filtersLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'filters'>;
+    industryLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Industry'>;
+    locationLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Location'>;
+    typeLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Type'>;
+    hideType: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portfolio-page.portfolio-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portfolio-page.portfolio-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRequestRequest extends Schema.CollectionType {
   collectionName: 'requests';
   info: {
@@ -870,6 +1042,29 @@ export interface ApiTestimonialsPageTestimonialsPage extends Schema.SingleType {
   };
 }
 
+export interface ApiTypeType extends Schema.CollectionType {
+  collectionName: 'types';
+  info: {
+    singularName: 'type';
+    pluralName: 'types';
+    displayName: 'Type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::type.type', 'name'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::type.type', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -887,10 +1082,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::industry.industry': ApiIndustryIndustry;
+      'api::location.location': ApiLocationLocation;
+      'api::portfolio.portfolio': ApiPortfolioPortfolio;
+      'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
       'api::request.request': ApiRequestRequest;
       'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::testimonials-page.testimonials-page': ApiTestimonialsPageTestimonialsPage;
+      'api::type.type': ApiTypeType;
     }
   }
 }

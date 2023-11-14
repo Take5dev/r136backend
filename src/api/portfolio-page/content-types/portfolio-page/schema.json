@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio_pages",
+  "info": {
+    "singularName": "portfolio-page",
+    "pluralName": "portfolio-pages",
+    "displayName": "Portfolio Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "h1": {
+      "type": "string",
+      "required": true,
+      "default": "Our Investment Portfolio"
+    },
+    "lead": {
+      "type": "string",
+      "default": "We work with entrepreneurs to provide the capital, in-depth technical knowledge, access to talent and mature investment processes to scale their successful startups."
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Go to Homepage"
+    },
+    "filtersLabel": {
+      "type": "string",
+      "required": true,
+      "default": "filters"
+    },
+    "industryLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Industry"
+    },
+    "locationLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Location"
+    },
+    "typeLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Type"
+    },
+    "hideType": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}

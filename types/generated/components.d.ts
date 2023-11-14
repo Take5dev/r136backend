@@ -455,6 +455,18 @@ export interface HomepageWeAreThePartnerThatMatters extends Schema.Component {
   };
 }
 
+export interface PortfolioPortfolioLink extends Schema.Component {
+  collectionName: 'components_portfolio_portfolio_links';
+  info: {
+    displayName: 'Portfolio Link';
+    icon: 'link';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    href: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface SeoSeo extends Schema.Component {
   collectionName: 'components_seo_seos';
   info: {
@@ -544,6 +556,7 @@ declare module '@strapi/types' {
       'homepage.testimonials': HomepageTestimonials;
       'homepage.vision': HomepageVision;
       'homepage.we-are-the-partner-that-matters': HomepageWeAreThePartnerThatMatters;
+      'portfolio.portfolio-link': PortfolioPortfolioLink;
       'seo.seo': SeoSeo;
       'team.links': TeamLinks;
       'team.position': TeamPosition;

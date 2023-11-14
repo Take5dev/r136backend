@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "link": {
+      "displayName": "Portfolio Link",
+      "type": "component",
+      "repeatable": false,
+      "component": "portfolio.portfolio-link"
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::industry.industry",
+      "mappedBy": "portfolio"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::location.location"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type.type"
+    },
+    "showOnHomepage": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "sort": {
+      "type": "float",
+      "default": 0,
+      "required": true
+    }
+  }
+}
