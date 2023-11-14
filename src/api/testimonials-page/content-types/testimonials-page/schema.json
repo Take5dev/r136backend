@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "testimonials_pages",
+  "info": {
+    "singularName": "testimonials-page",
+    "pluralName": "testimonials-pages",
+    "displayName": "Testimonials Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "h1": {
+      "type": "string",
+      "required": true,
+      "default": "Testimonials"
+    },
+    "buttonLabel": {
+      "type": "string",
+      "default": "Go to Homepage",
+      "required": true
+    }
+  }
+}

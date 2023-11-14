@@ -833,6 +833,42 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestimonialsPageTestimonialsPage extends Schema.SingleType {
+  collectionName: 'testimonials_pages';
+  info: {
+    singularName: 'testimonials-page';
+    pluralName: 'testimonials-pages';
+    displayName: 'Testimonials Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    h1: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Testimonials'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Homepage'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testimonials-page.testimonials-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testimonials-page.testimonials-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -853,6 +889,7 @@ declare module '@strapi/types' {
       'api::request.request': ApiRequestRequest;
       'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::testimonials-page.testimonials-page': ApiTestimonialsPageTestimonialsPage;
     }
   }
 }
