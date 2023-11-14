@@ -130,20 +130,6 @@
       "repeatable": false,
       "component": "homepage.privacy-policy",
       "required": true
-    },
-    "page404": {
-      "displayName": "page404",
-      "type": "component",
-      "repeatable": false,
-      "component": "homepage.page404",
-      "required": true
-    },
-    "page500": {
-      "displayName": "Page 500",
-      "type": "component",
-      "repeatable": false,
-      "component": "homepage.page-500",
-      "required": true
     }
   }
 }
