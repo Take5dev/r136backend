@@ -799,6 +799,40 @@ export interface ApiTeamTeam extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestimonialTestimonial extends Schema.CollectionType {
+  collectionName: 'testimonials';
+  info: {
+    singularName: 'testimonial';
+    pluralName: 'testimonials';
+    displayName: 'Testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media;
+    name: Attribute.String & Attribute.Required;
+    position: Attribute.String;
+    quote: Attribute.String & Attribute.Required;
+    sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::testimonial.testimonial',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -818,6 +852,7 @@ declare module '@strapi/types' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::request.request': ApiRequestRequest;
       'api::team.team': ApiTeamTeam;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }
   }
 }
