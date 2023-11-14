@@ -805,6 +805,7 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
     singularName: 'testimonial';
     pluralName: 'testimonials';
     displayName: 'Testimonial';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -813,7 +814,7 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
     image: Attribute.Media;
     name: Attribute.String & Attribute.Required;
     position: Attribute.String;
-    quote: Attribute.String & Attribute.Required;
+    quote: Attribute.Text & Attribute.Required;
     sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
