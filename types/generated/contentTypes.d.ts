@@ -715,6 +715,8 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       Attribute.Required;
     privacyPolicy: Attribute.Component<'homepage.privacy-policy'> &
       Attribute.Required;
+    page404: Attribute.Component<'homepage.page404'>;
+    page500: Attribute.Component<'homepage.page-500'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
