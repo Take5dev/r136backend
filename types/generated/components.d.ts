@@ -361,6 +361,7 @@ export interface HomepageTeam extends Schema.Component {
   info: {
     displayName: 'Team';
     icon: 'user';
+    description: '';
   };
   attributes: {
     heading: Attribute.String &
@@ -368,6 +369,8 @@ export interface HomepageTeam extends Schema.Component {
       Attribute.DefaultTo<'Your Partners for&nbsp;Growth'>;
     lead: Attribute.String &
       Attribute.DefaultTo<'R136 is led by a team of partners who possess unique expertise and experience in building and operating some of the largest companies in the world.'>;
+    popupPortfolioLabel: Attribute.String &
+      Attribute.DefaultTo<'Selected angel portfolio:'>;
   };
 }
 
@@ -450,6 +453,40 @@ export interface SeoSeo extends Schema.Component {
   };
 }
 
+export interface TeamLinks extends Schema.Component {
+  collectionName: 'components_team_links';
+  info: {
+    displayName: 'Links';
+    icon: 'link';
+  };
+  attributes: {
+    href: Attribute.String & Attribute.Required;
+    label: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface TeamPosition extends Schema.Component {
+  collectionName: 'components_team_positions';
+  info: {
+    displayName: 'Position';
+    icon: 'briefcase';
+  };
+  attributes: {
+    position: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface TeamSelectedPortfolio extends Schema.Component {
+  collectionName: 'components_team_selected_portfolios';
+  info: {
+    displayName: 'Selected Portfolio';
+    icon: 'puzzle';
+  };
+  attributes: {
+    logo: Attribute.Media & Attribute.Required;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -476,6 +513,9 @@ declare module '@strapi/types' {
       'homepage.vision': HomepageVision;
       'homepage.we-are-the-partner-that-matters': HomepageWeAreThePartnerThatMatters;
       'seo.seo': SeoSeo;
+      'team.links': TeamLinks;
+      'team.position': TeamPosition;
+      'team.selected-portfolio': TeamSelectedPortfolio;
     }
   }
 }

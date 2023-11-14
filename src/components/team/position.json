@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_team_positions",
+  "info": {
+    "displayName": "Position",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

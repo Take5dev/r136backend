@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teams",
+  "info": {
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "listImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "detailImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "position": {
+      "displayName": "Position",
+      "type": "component",
+      "repeatable": true,
+      "component": "team.position"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "links": {
+      "displayName": "Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "team.links"
+    },
+    "portfolio": {
+      "displayName": "Selected Portfolio",
+      "type": "component",
+      "repeatable": true,
+      "component": "team.selected-portfolio"
+    },
+    "sort": {
+      "type": "float",
+      "default": 0,
+      "required": true
+    }
+  }
+}

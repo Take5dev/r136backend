@@ -2,7 +2,8 @@
   "collectionName": "components_homepage_teams",
   "info": {
     "displayName": "Team",
-    "icon": "user"
+    "icon": "user",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,6 +15,10 @@
     "lead": {
       "type": "string",
       "default": "R136 is led by a team of partners who possess unique expertise and experience in building and operating some of the largest companies in the world."
+    },
+    "popupPortfolioLabel": {
+      "type": "string",
+      "default": "Selected angel portfolio:"
     }
   }
 }

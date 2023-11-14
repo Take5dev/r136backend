@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_team_selected_portfolios",
+  "info": {
+    "displayName": "Selected Portfolio",
+    "icon": "puzzle"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

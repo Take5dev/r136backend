@@ -766,6 +766,37 @@ export interface ApiRequestRequest extends Schema.CollectionType {
   };
 }
 
+export interface ApiTeamTeam extends Schema.CollectionType {
+  collectionName: 'teams';
+  info: {
+    singularName: 'team';
+    pluralName: 'teams';
+    displayName: 'Team';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    listImage: Attribute.Media & Attribute.Required;
+    detailImage: Attribute.Media & Attribute.Required;
+    mobileImage: Attribute.Media;
+    position: Attribute.Component<'team.position', true>;
+    bio: Attribute.RichText;
+    links: Attribute.Component<'team.links', true>;
+    portfolio: Attribute.Component<'team.selected-portfolio', true>;
+    sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -784,6 +815,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::request.request': ApiRequestRequest;
+      'api::team.team': ApiTeamTeam;
     }
   }
 }
