@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_homepage_content_and_insights",
+  "info": {
+    "displayName": "Content & Insights",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Latest content & Insights",
+      "required": true
+    },
+    "lead": {
+      "type": "string",
+      "default": "Please check out our most recent insights based on our view of today’s markets. If you would like to see other commentary from our team, please contact us."
+    },
+    "buttonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "View all"
+    },
+    "lastCardLabel": {
+      "type": "string",
+      "default": "View all",
+      "required": true
+    }
+  }
+}

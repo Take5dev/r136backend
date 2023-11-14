@@ -10,7 +10,7 @@
     "buttonLabel": {
       "type": "string",
       "required": true,
-      "default": "Submit"
+      "default": "Get In Touch"
     },
     "visionMenuLabel": {
       "type": "string",
@@ -36,6 +36,26 @@
       "type": "string",
       "default": "Menu",
       "required": true
+    },
+    "howDoWeHelpLabel": {
+      "type": "string",
+      "default": "How do we help"
+    },
+    "teamLabel": {
+      "type": "string",
+      "default": "Team"
+    },
+    "contentInsightsLabel": {
+      "type": "string",
+      "default": "Content & insights"
+    },
+    "testimonialsLabel": {
+      "type": "string",
+      "default": "Testimonials"
+    },
+    "portfolioLabel": {
+      "type": "string",
+      "default": "Portfolio"
     }
   }
 }

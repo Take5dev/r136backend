@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_homepage_we_are_the_partner_that_matters",
+  "info": {
+    "displayName": "We are the Partner that Matters",
+    "icon": "shield"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "default": "We are the Partner that Matters"
+    },
+    "lead": {
+      "type": "string",
+      "default": "How we formed R136 mirrors the startups we invest in, by bringing different types of skills and expertise together with a mission. R136 Ventures helps our partners identify opportunities and overcome challenges to develop and grow."
+    },
+    "textRight": {
+      "type": "string",
+      "default": "When you partner with us, we bring value focusing on four key areas:"
+    },
+    "item": {
+      "displayName": "Partner Item",
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.partner-item"
+    }
+  }
+}

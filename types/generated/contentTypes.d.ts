@@ -704,6 +704,17 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
     contact: Attribute.Component<'homepage.contact'> & Attribute.Required;
     form: Attribute.Component<'homepage.form'> & Attribute.Required;
     overlay: Attribute.Component<'homepage.overlay'> & Attribute.Required;
+    portfolio: Attribute.Component<'homepage.portfolio'> & Attribute.Required;
+    help: Attribute.Component<'homepage.how-do-we-help'> & Attribute.Required;
+    partner: Attribute.Component<'homepage.we-are-the-partner-that-matters'> &
+      Attribute.Required;
+    team: Attribute.Component<'homepage.team'> & Attribute.Required;
+    testimonials: Attribute.Component<'homepage.testimonials'> &
+      Attribute.Required;
+    insights: Attribute.Component<'homepage.content-and-insights'> &
+      Attribute.Required;
+    privacyPolicy: Attribute.Component<'homepage.privacy-policy'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

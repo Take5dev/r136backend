@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_homepage_how_do_we_helps",
+  "info": {
+    "displayName": "How do we help",
+    "icon": "doctor"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true,
+      "default": "Now Comes the Hard Part"
+    },
+    "lead": {
+      "type": "string",
+      "default": "You’ve taken your concept, built a team, navigated through various challenges in launching a growing business. Now comes the hard part – scaling your organization to meet the next set of challenges."
+    },
+    "rightText": {
+      "type": "string",
+      "default": "Any VC can write a check, but you need a partner to provide guidance through difficult questions such as:"
+    },
+    "area": {
+      "displayName": "How do we Help Section",
+      "type": "component",
+      "repeatable": true,
+      "component": "homepage.how-do-we-help-section"
+    }
+  }
+}

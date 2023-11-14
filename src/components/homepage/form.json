@@ -2,7 +2,8 @@
   "collectionName": "components_homepage_forms",
   "info": {
     "displayName": "Form",
-    "icon": "layer"
+    "icon": "layer",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -49,7 +50,7 @@
     "privacyPolicyLabel": {
       "type": "string",
       "required": true,
-      "default": "I consent to share my personal data and accept Privacy Policy"
+      "default": "I consent to share my personal data and accept "
     },
     "communicationLabel": {
       "type": "string",
@@ -70,6 +71,11 @@
       "type": "string",
       "required": true,
       "default": "Thank you, the message was sent successfully"
+    },
+    "privacyPolicyLink": {
+      "type": "string",
+      "default": "Privacy Policy",
+      "required": true
     }
   }
 }

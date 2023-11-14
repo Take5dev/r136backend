@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_homepage_teams",
+  "info": {
+    "displayName": "Team",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Your Partners for&nbsp;Growth",
+      "required": true
+    },
+    "lead": {
+      "type": "string",
+      "default": "R136 is led by a team of partners who possess unique expertise and experience in building and operating some of the largest companies in the world."
+    }
+  }
+}

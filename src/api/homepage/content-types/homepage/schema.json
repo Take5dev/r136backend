@@ -81,6 +81,55 @@
       "repeatable": false,
       "component": "homepage.overlay",
       "required": true
+    },
+    "portfolio": {
+      "displayName": "Portfolio",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.portfolio",
+      "required": true
+    },
+    "help": {
+      "displayName": "How do we help",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.how-do-we-help",
+      "required": true
+    },
+    "partner": {
+      "displayName": "We are the Partner that Matters",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.we-are-the-partner-that-matters",
+      "required": true
+    },
+    "team": {
+      "displayName": "Team",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.team",
+      "required": true
+    },
+    "testimonials": {
+      "displayName": "Testimonials",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.testimonials",
+      "required": true
+    },
+    "insights": {
+      "displayName": "Content & Insights",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.content-and-insights",
+      "required": true
+    },
+    "privacyPolicy": {
+      "displayName": "Privacy Policy",
+      "type": "component",
+      "repeatable": false,
+      "component": "homepage.privacy-policy",
+      "required": true
     }
   }
 }

@@ -10,7 +10,7 @@ export interface GlobalHeader extends Schema.Component {
   attributes: {
     buttonLabel: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<'Submit'>;
+      Attribute.DefaultTo<'Get In Touch'>;
     visionMenuLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Our Vision'>;
@@ -26,6 +26,12 @@ export interface GlobalHeader extends Schema.Component {
     collapsedMenuLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Menu'>;
+    howDoWeHelpLabel: Attribute.String & Attribute.DefaultTo<'How do we help'>;
+    teamLabel: Attribute.String & Attribute.DefaultTo<'Team'>;
+    contentInsightsLabel: Attribute.String &
+      Attribute.DefaultTo<'Content & insights'>;
+    testimonialsLabel: Attribute.String & Attribute.DefaultTo<'Testimonials'>;
+    portfolioLabel: Attribute.String & Attribute.DefaultTo<'Portfolio'>;
   };
 }
 
@@ -48,6 +54,27 @@ export interface HomepageContact extends Schema.Component {
   };
 }
 
+export interface HomepageContentAndInsights extends Schema.Component {
+  collectionName: 'components_homepage_content_and_insights';
+  info: {
+    displayName: 'Content & Insights';
+    icon: 'information';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Latest content & Insights'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'Please check out our most recent insights based on our view of today\u2019s markets. If you would like to see other commentary from our team, please contact us.'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'View all'>;
+    lastCardLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'View all'>;
+  };
+}
+
 export interface HomepageFocusedCards extends Schema.Component {
   collectionName: 'components_homepage_focused_cards';
   info: {
@@ -65,6 +92,7 @@ export interface HomepageFocused extends Schema.Component {
   info: {
     displayName: 'Focused';
     icon: 'collapse';
+    description: '';
   };
   attributes: {
     heading: Attribute.String &
@@ -85,7 +113,7 @@ export interface HomepageFocused extends Schema.Component {
       }>;
     buttonLabel: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<'Submit your project'>;
+      Attribute.DefaultTo<'Get In Touch'>;
   };
 }
 
@@ -94,6 +122,7 @@ export interface HomepageForm extends Schema.Component {
   info: {
     displayName: 'Form';
     icon: 'layer';
+    description: '';
   };
   attributes: {
     requiredError: Attribute.String &
@@ -122,7 +151,7 @@ export interface HomepageForm extends Schema.Component {
       Attribute.DefaultTo<'How can we help?'>;
     privacyPolicyLabel: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<'I consent to share my personal data and accept Privacy Policy'>;
+      Attribute.DefaultTo<'I consent to share my personal data and accept '>;
     communicationLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'I agree to receive communication from R136'>;
@@ -135,6 +164,9 @@ export interface HomepageForm extends Schema.Component {
     successMessage: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'Thank you, the message was sent successfully'>;
+    privacyPolicyLink: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Privacy Policy'>;
   };
 }
 
@@ -162,6 +194,35 @@ export interface HomepageHero extends Schema.Component {
       Attribute.SetMinMax<{
         min: 2;
       }>;
+  };
+}
+
+export interface HomepageHowDoWeHelpSection extends Schema.Component {
+  collectionName: 'components_homepage_how_do_we_help_sections';
+  info: {
+    displayName: 'How do we Help Section';
+    icon: 'check';
+  };
+  attributes: {
+    text: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface HomepageHowDoWeHelp extends Schema.Component {
+  collectionName: 'components_homepage_how_do_we_helps';
+  info: {
+    displayName: 'How do we help';
+    icon: 'doctor';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Now Comes the Hard Part'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'You\u2019ve taken your concept, built a team, navigated through various challenges in launching a growing business. Now comes the hard part \u2013 scaling your organization to meet the next set of challenges.'>;
+    rightText: Attribute.String &
+      Attribute.DefaultTo<'Any VC can write a check, but you need a partner to provide guidance through difficult questions such as:'>;
+    area: Attribute.Component<'homepage.how-do-we-help-section', true>;
   };
 }
 
@@ -226,6 +287,47 @@ export interface HomepageOverlay extends Schema.Component {
   };
 }
 
+export interface HomepagePartnerItem extends Schema.Component {
+  collectionName: 'components_homepage_partner_items';
+  info: {
+    displayName: 'Partner Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Blocks;
+  };
+}
+
+export interface HomepagePortfolio extends Schema.Component {
+  collectionName: 'components_homepage_portfolios';
+  info: {
+    displayName: 'Portfolio';
+    icon: 'grid';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Our Investment Portfolio'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'We work with entrepreneurs to provide the capital, in-depth technical knowledge, access to talent and mature investment processes to scale their successful startups.'>;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Portfolio'>;
+  };
+}
+
+export interface HomepagePrivacyPolicy extends Schema.Component {
+  collectionName: 'components_homepage_privacy_policies';
+  info: {
+    displayName: 'Privacy Policy';
+    icon: 'shield';
+  };
+  attributes: {
+    content: Attribute.Blocks & Attribute.Required;
+  };
+}
+
 export interface HomepageTableCell extends Schema.Component {
   collectionName: 'components_homepage_table_cells';
   info: {
@@ -253,18 +355,68 @@ export interface HomepageTable extends Schema.Component {
   };
 }
 
+export interface HomepageTeam extends Schema.Component {
+  collectionName: 'components_homepage_teams';
+  info: {
+    displayName: 'Team';
+    icon: 'user';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Your Partners for&nbsp;Growth'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'R136 is led by a team of partners who possess unique expertise and experience in building and operating some of the largest companies in the world.'>;
+  };
+}
+
+export interface HomepageTestimonials extends Schema.Component {
+  collectionName: 'components_homepage_testimonials';
+  info: {
+    displayName: 'Testimonials';
+    icon: 'message';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Testimonials'>;
+    lead: Attribute.Blocks;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'View more'>;
+  };
+}
+
 export interface HomepageVision extends Schema.Component {
   collectionName: 'components_homepage_visions';
   info: {
     displayName: 'Vision';
     icon: 'eye';
+    description: '';
   };
   attributes: {
     heading: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'We Back the Brightest and Help Them Scale'>;
-    text: Attribute.Text &
-      Attribute.DefaultTo<'R136 works with creative entrepreneurs to scale their mid-to-late stage startups with a unique blend of expertise and experience that unlocks their potential. Many of us have been CEOs, CTOs and c-level execs at corporations and young companies \u2013 we\u2019ve done this before. We help shape your vision, strategy, execution and talent. Our partners managed more than $400 million in assets and have funded more than 30 companies.'>;
+    lead: Attribute.Blocks;
+  };
+}
+
+export interface HomepageWeAreThePartnerThatMatters extends Schema.Component {
+  collectionName: 'components_homepage_we_are_the_partner_that_matters';
+  info: {
+    displayName: 'We are the Partner that Matters';
+    icon: 'shield';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'We are the Partner that Matters'>;
+    lead: Attribute.String &
+      Attribute.DefaultTo<'How we formed R136 mirrors the startups we invest in, by bringing different types of skills and expertise together with a mission. R136 Ventures helps our partners identify opportunities and overcome challenges to develop and grow.'>;
+    textRight: Attribute.String &
+      Attribute.DefaultTo<'When you partner with us, we bring value focusing on four key areas:'>;
+    item: Attribute.Component<'homepage.partner-item', true>;
   };
 }
 
@@ -301,17 +453,26 @@ declare module '@strapi/types' {
     export interface Components {
       'global.header': GlobalHeader;
       'homepage.contact': HomepageContact;
+      'homepage.content-and-insights': HomepageContentAndInsights;
       'homepage.focused-cards': HomepageFocusedCards;
       'homepage.focused': HomepageFocused;
       'homepage.form': HomepageForm;
       'homepage.hero-slider': HomepageHeroSlider;
       'homepage.hero': HomepageHero;
+      'homepage.how-do-we-help-section': HomepageHowDoWeHelpSection;
+      'homepage.how-do-we-help': HomepageHowDoWeHelp;
       'homepage.mission': HomepageMission;
       'homepage.office': HomepageOffice;
       'homepage.overlay': HomepageOverlay;
+      'homepage.partner-item': HomepagePartnerItem;
+      'homepage.portfolio': HomepagePortfolio;
+      'homepage.privacy-policy': HomepagePrivacyPolicy;
       'homepage.table-cell': HomepageTableCell;
       'homepage.table': HomepageTable;
+      'homepage.team': HomepageTeam;
+      'homepage.testimonials': HomepageTestimonials;
       'homepage.vision': HomepageVision;
+      'homepage.we-are-the-partner-that-matters': HomepageWeAreThePartnerThatMatters;
       'seo.seo': SeoSeo;
     }
   }

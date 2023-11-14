@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_homepage_how_do_we_help_sections",
+  "info": {
+    "displayName": "How do we Help Section",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
