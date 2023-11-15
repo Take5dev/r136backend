@@ -54,12 +54,6 @@
       "relation": "manyToOne",
       "target": "api::post.post",
       "inversedBy": "relatedPosts"
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "posts"
     }
   }
 }
