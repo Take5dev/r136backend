@@ -1098,6 +1098,7 @@ export interface ApiTeamTeam extends Schema.CollectionType {
     links: Attribute.Component<'team.links', true>;
     portfolio: Attribute.Component<'team.selected-portfolio'>;
     sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
+    selectedInsights: Attribute.Component<'team.selected-insights'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

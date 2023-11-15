@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_team_selected_insights",
+  "info": {
+    "displayName": "Selected Insights",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonLink": {
+      "type": "string"
+    }
+  }
+}

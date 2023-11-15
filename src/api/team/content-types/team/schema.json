@@ -65,6 +65,12 @@
       "type": "float",
       "default": 0,
       "required": true
+    },
+    "selectedInsights": {
+      "displayName": "Selected Insights",
+      "type": "component",
+      "repeatable": false,
+      "component": "team.selected-insights"
     }
   }
 }

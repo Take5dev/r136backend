@@ -518,6 +518,18 @@ export interface TeamPosition extends Schema.Component {
   };
 }
 
+export interface TeamSelectedInsights extends Schema.Component {
+  collectionName: 'components_team_selected_insights';
+  info: {
+    displayName: 'Selected Insights';
+    icon: 'pin';
+  };
+  attributes: {
+    buttonLabel: Attribute.String;
+    buttonLink: Attribute.String;
+  };
+}
+
 export interface TeamSelectedPortfolio extends Schema.Component {
   collectionName: 'components_team_selected_portfolios';
   info: {
@@ -560,6 +572,7 @@ declare module '@strapi/types' {
       'seo.seo': SeoSeo;
       'team.links': TeamLinks;
       'team.position': TeamPosition;
+      'team.selected-insights': TeamSelectedInsights;
       'team.selected-portfolio': TeamSelectedPortfolio;
     }
   }
