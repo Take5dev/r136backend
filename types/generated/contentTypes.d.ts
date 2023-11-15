@@ -677,6 +677,62 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogPageBlogPage extends Schema.SingleType {
+  collectionName: 'blog_pages';
+  info: {
+    singularName: 'blog-page';
+    pluralName: 'blog-pages';
+    displayName: 'Blog Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'seo.seo'>;
+    h1: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Content & Insights'>;
+    lead: Attribute.Text &
+      Attribute.DefaultTo<'Please check out our most recent insights based on our view of today\u2019s markets. If you would like to see other commentary from our team, please contact us.'>;
+    filtersLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'filters'>;
+    allLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'All'>;
+    backToHomepageLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Back to latest insights'>;
+    loadMoreLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Load more'>;
+    postBackMobileLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go back'>;
+    postBackLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Go to Content & Insights'>;
+    relatedLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'You may also like'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-page.blog-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-page.blog-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -784,11 +840,6 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::industry.industry', 'name'>;
-    portfolios: Attribute.Relation<
-      'api::industry.industry',
-      'manyToMany',
-      'api::portfolio.portfolio'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -852,11 +903,6 @@ export interface ApiPortfolioPortfolio extends Schema.CollectionType {
   attributes: {
     image: Attribute.Media & Attribute.Required;
     link: Attribute.Component<'portfolio.portfolio-link'>;
-    industries: Attribute.Relation<
-      'api::portfolio.portfolio',
-      'manyToMany',
-      'api::industry.industry'
-    >;
     location: Attribute.Relation<
       'api::portfolio.portfolio',
       'oneToOne',
@@ -1159,6 +1205,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::category.category': ApiCategoryCategory;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;

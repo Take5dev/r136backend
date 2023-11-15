@@ -20,12 +20,6 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
-    },
-    "portfolios": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::portfolio.portfolio",
-      "inversedBy": "industries"
     }
   }
 }

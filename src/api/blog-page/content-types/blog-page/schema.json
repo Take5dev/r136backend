@@ -1,0 +1,64 @@
+{
+  "kind": "singleType",
+  "collectionName": "blog_pages",
+  "info": {
+    "singularName": "blog-page",
+    "pluralName": "blog-pages",
+    "displayName": "Blog Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "h1": {
+      "type": "string",
+      "required": true,
+      "default": "Content & Insights"
+    },
+    "lead": {
+      "type": "text",
+      "default": "Please check out our most recent insights based on our view of today’s markets. If you would like to see other commentary from our team, please contact us."
+    },
+    "filtersLabel": {
+      "type": "string",
+      "default": "filters",
+      "required": true
+    },
+    "allLabel": {
+      "type": "string",
+      "required": true,
+      "default": "All"
+    },
+    "backToHomepageLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Back to latest insights"
+    },
+    "loadMoreLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Load more"
+    },
+    "postBackMobileLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Go back"
+    },
+    "postBackLabel": {
+      "type": "string",
+      "default": "Go to Content & Insights",
+      "required": true
+    },
+    "relatedLabel": {
+      "type": "string",
+      "required": true,
+      "default": "You may also like"
+    }
+  }
+}

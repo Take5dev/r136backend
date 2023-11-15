@@ -26,12 +26,6 @@
       "repeatable": false,
       "component": "portfolio.portfolio-link"
     },
-    "industries": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::industry.industry",
-      "mappedBy": "portfolios"
-    },
     "location": {
       "type": "relation",
       "relation": "oneToOne",
