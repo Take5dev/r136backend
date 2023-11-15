@@ -60,6 +60,10 @@
       "relation": "manyToMany",
       "target": "api::blog-category.blog-category",
       "inversedBy": "posts"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "h1"
     }
   }
 }

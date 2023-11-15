@@ -1030,6 +1030,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'manyToMany',
       'api::blog-category.blog-category'
     >;
+    slug: Attribute.UID<'api::post.post', 'h1'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
