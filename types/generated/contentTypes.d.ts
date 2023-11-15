@@ -719,6 +719,7 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
     singularName: 'blog-page';
     pluralName: 'blog-pages';
     displayName: 'Blog Page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -751,6 +752,7 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
     relatedLabel: Attribute.String &
       Attribute.Required &
       Attribute.DefaultTo<'You may also like'>;
+    learnMoreLabel: Attribute.String & Attribute.DefaultTo<'Learn more'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
