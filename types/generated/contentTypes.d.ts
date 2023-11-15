@@ -677,6 +677,42 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
+  collectionName: 'blog_categories';
+  info: {
+    singularName: 'blog-category';
+    pluralName: 'blog-categories';
+    displayName: 'Blog Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    slug: Attribute.UID<'api::blog-category.blog-category', 'name'>;
+    posts: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'manyToMany',
+      'api::post.post'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogPageBlogPage extends Schema.SingleType {
   collectionName: 'blog_pages';
   info: {
@@ -989,6 +1025,11 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::post.post'
     >;
     post: Attribute.Relation<'api::post.post', 'manyToOne', 'api::post.post'>;
+    blog_categories: Attribute.Relation<
+      'api::post.post',
+      'manyToMany',
+      'api::blog-category.blog-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1174,6 +1215,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::blog-page.blog-page': ApiBlogPageBlogPage;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
