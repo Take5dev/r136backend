@@ -784,9 +784,9 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::industry.industry', 'name'>;
-    portfolio: Attribute.Relation<
+    portfolios: Attribute.Relation<
       'api::industry.industry',
-      'manyToOne',
+      'manyToMany',
       'api::portfolio.portfolio'
     >;
     createdAt: Attribute.DateTime;
@@ -854,7 +854,7 @@ export interface ApiPortfolioPortfolio extends Schema.CollectionType {
     link: Attribute.Component<'portfolio.portfolio-link'>;
     industries: Attribute.Relation<
       'api::portfolio.portfolio',
-      'oneToMany',
+      'manyToMany',
       'api::industry.industry'
     >;
     location: Attribute.Relation<

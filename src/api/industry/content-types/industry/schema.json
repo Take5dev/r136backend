@@ -21,9 +21,9 @@
       "type": "uid",
       "targetField": "name"
     },
-    "portfolio": {
+    "portfolios": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::portfolio.portfolio",
       "inversedBy": "industries"
     }

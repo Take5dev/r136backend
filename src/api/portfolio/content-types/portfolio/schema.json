@@ -28,9 +28,9 @@
     },
     "industries": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::industry.industry",
-      "mappedBy": "portfolio"
+      "mappedBy": "portfolios"
     },
     "location": {
       "type": "relation",
