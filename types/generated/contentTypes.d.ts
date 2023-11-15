@@ -746,11 +746,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::category.category', 'name'>;
-    post: Attribute.Relation<
-      'api::category.category',
-      'manyToOne',
-      'api::post.post'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1010,11 +1005,6 @@ export interface ApiPostPost extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    categories: Attribute.Relation<
-      'api::post.post',
-      'oneToMany',
-      'api::category.category'
-    >;
     seo: Attribute.Component<'seo.seo'>;
     image: Attribute.Media;
     imageSource: Attribute.RichText;

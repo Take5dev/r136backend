@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "post"
-    },
     "seo": {
       "type": "component",
       "repeatable": false,

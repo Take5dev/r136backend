@@ -19,12 +19,6 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
-    },
-    "post": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::post.post",
-      "inversedBy": "categories"
     }
   }
 }
