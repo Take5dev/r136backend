@@ -45,6 +45,12 @@
       "type": "float",
       "default": 0,
       "required": true
+    },
+    "industries": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industry.industry",
+      "inversedBy": "portfolios"
     }
   }
 }

@@ -840,6 +840,11 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required & Attribute.Unique;
     slug: Attribute.UID<'api::industry.industry', 'name'>;
+    portfolios: Attribute.Relation<
+      'api::industry.industry',
+      'manyToMany',
+      'api::portfolio.portfolio'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -917,6 +922,11 @@ export interface ApiPortfolioPortfolio extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<false>;
     sort: Attribute.Float & Attribute.Required & Attribute.DefaultTo<0>;
+    industries: Attribute.Relation<
+      'api::portfolio.portfolio',
+      'manyToMany',
+      'api::industry.industry'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
