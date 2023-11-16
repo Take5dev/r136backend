@@ -65,6 +65,10 @@
       "type": "string",
       "default": "Learn more",
       "required": false
+    },
+    "authorLabel": {
+      "type": "string",
+      "default": "Author: "
     }
   }
 }

@@ -753,6 +753,7 @@ export interface ApiBlogPageBlogPage extends Schema.SingleType {
       Attribute.Required &
       Attribute.DefaultTo<'You may also like'>;
     learnMoreLabel: Attribute.String & Attribute.DefaultTo<'Learn more'>;
+    authorLabel: Attribute.String & Attribute.DefaultTo<'Author: '>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1033,6 +1034,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::blog-category.blog-category'
     >;
     slug: Attribute.UID<'api::post.post', 'h1'>;
+    Author: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

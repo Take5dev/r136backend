@@ -64,6 +64,9 @@
     "slug": {
       "type": "uid",
       "targetField": "h1"
+    },
+    "Author": {
+      "type": "string"
     }
   }
 }
