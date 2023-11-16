@@ -65,7 +65,7 @@
       "type": "uid",
       "targetField": "h1"
     },
-    "Author": {
+    "postAuthor": {
       "type": "string"
     }
   }
