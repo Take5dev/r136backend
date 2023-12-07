@@ -67,6 +67,9 @@
     },
     "postAuthor": {
       "type": "string"
+    },
+    "externalLink": {
+      "type": "string"
     }
   }
 }

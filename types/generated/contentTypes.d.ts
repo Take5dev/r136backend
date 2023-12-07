@@ -1035,6 +1035,7 @@ export interface ApiPostPost extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::post.post', 'h1'>;
     postAuthor: Attribute.String;
+    externalLink: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
