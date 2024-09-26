@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_homepage_newsletters",
+  "info": {
+    "displayName": "Newsletter",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Newsletter",
+      "required": true
+    },
+    "lead": {
+      "type": "richtext",
+      "default": "Subscribe to our bi-monthly newsletter for the latest firm news, portfolio updates, and top 10 market insights from the past 2 months. You'll also get access and notifications for our latest podcasts and invitations to our exclusive events and webinars."
+    },
+    "buttonLabel": {
+      "type": "string",
+      "default": "Subscribe",
+      "required": true
+    },
+    "successMessage": {
+      "type": "string",
+      "required": true,
+      "default": "Your email will be added to our newsletter"
+    }
+  }
+}

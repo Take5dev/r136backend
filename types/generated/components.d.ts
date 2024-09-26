@@ -246,6 +246,27 @@ export interface HomepageMission extends Schema.Component {
   };
 }
 
+export interface HomepageNewsletter extends Schema.Component {
+  collectionName: 'components_homepage_newsletters';
+  info: {
+    displayName: 'Newsletter';
+    icon: 'envelop';
+  };
+  attributes: {
+    heading: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Newsletter'>;
+    lead: Attribute.RichText &
+      Attribute.DefaultTo<"Subscribe to our bi-monthly newsletter for the latest firm news, portfolio updates, and top 10 market insights from the past 2 months. You'll also get access and notifications for our latest podcasts and invitations to our exclusive events and webinars.">;
+    buttonLabel: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Subscribe'>;
+    successMessage: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'Your email will be added to our newsletter'>;
+  };
+}
+
 export interface HomepageOffice extends Schema.Component {
   collectionName: 'components_homepage_offices';
   info: {
@@ -555,6 +576,7 @@ declare module '@strapi/types' {
       'homepage.how-do-we-help-section': HomepageHowDoWeHelpSection;
       'homepage.how-do-we-help': HomepageHowDoWeHelp;
       'homepage.mission': HomepageMission;
+      'homepage.newsletter': HomepageNewsletter;
       'homepage.office': HomepageOffice;
       'homepage.overlay': HomepageOverlay;
       'homepage.page-500': HomepagePage500;

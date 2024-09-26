@@ -812,6 +812,7 @@ export interface ApiHomepageHomepage extends Schema.SingleType {
       Attribute.Required;
     page404: Attribute.Component<'homepage.page404'>;
     page500: Attribute.Component<'homepage.page-500'>;
+    newsletter: Attribute.Component<'homepage.newsletter'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -890,6 +891,36 @@ export interface ApiLocationLocation extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsletterNewsletter extends Schema.CollectionType {
+  collectionName: 'newsletters';
+  info: {
+    singularName: 'newsletter';
+    pluralName: 'newsletters';
+    displayName: 'Newsletter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter.newsletter',
       'oneToOne',
       'admin::user'
     > &
@@ -1227,6 +1258,7 @@ declare module '@strapi/types' {
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::industry.industry': ApiIndustryIndustry;
       'api::location.location': ApiLocationLocation;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::portfolio-page.portfolio-page': ApiPortfolioPagePortfolioPage;
       'api::post.post': ApiPostPost;
